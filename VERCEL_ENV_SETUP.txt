@@ -1,0 +1,135 @@
+================================================================================
+                    VERCEL ENVIRONMENT VARIABLES
+                         Copy & Paste Ready
+================================================================================
+
+These are the EXACT 4 environment variables you need to add to Vercel:
+
+1. NEXTAUTH_SECRET
+   └─ Value: Run this command locally: openssl rand -base64 32
+   └─ Example: ABCDefghijklmnopqrstuvwxyz12345678+/XYZ==
+
+2. NEXTAUTH_URL
+   └─ Value: Your Vercel deployment domain
+   └─ Example: https://treebro-abc123def456.vercel.app
+   └─ Note: Get this from Vercel Dashboard after first deploy
+
+3. GOOGLE_CLIENT_ID
+   └─ Value: From Google Cloud Console
+   └─ Example: 123456789012-abcdefghijklmnopqrstuvwxyzabcdef.apps.googleusercontent.com
+   └─ Get from: https://console.cloud.google.com/ > Credentials > OAuth 2.0 Client ID
+
+4. GOOGLE_CLIENT_SECRET
+   └─ Value: From Google Cloud Console
+   └─ Example: GOCSPX-1234567890abcdefghijklmnopq
+   └─ Get from: https://console.cloud.google.com/ > Credentials > OAuth 2.0 Client ID
+
+================================================================================
+                           STEP-BY-STEP SETUP
+================================================================================
+
+STEP 1: Generate NEXTAUTH_SECRET
+────────────────────────────────
+Run this in your terminal:
+$ openssl rand -base64 32
+
+Copy the output. This is your NEXTAUTH_SECRET value.
+
+STEP 2: Get Your Vercel Domain
+──────────────────────────────
+1. Deploy your code to Vercel
+2. Go to https://vercel.com/dashboard
+3. Click your project
+4. Look at the "Production" deployment
+5. Copy the domain (e.g., treebro-abc123.vercel.app)
+6. Add https:// prefix (e.g., https://treebro-abc123.vercel.app)
+
+STEP 3: Get Google Credentials
+───────────────────────────────
+1. Go to https://console.cloud.google.com/
+2. Create a new project or select existing
+3. Search for "Google+ API" and click "Enable"
+4. Click "Credentials" on the left sidebar
+5. Click "Create Credentials" > "OAuth client ID"
+6. Select "Web application"
+7. Add authorized redirect URIs:
+   - http://localhost:3000/api/auth/callback/google (for testing)
+   - https://your-vercel-domain.vercel.app/api/auth/callback/google (production)
+8. Copy the GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET
+
+STEP 4: Add to Vercel Dashboard
+────────────────────────────────
+1. Go to https://vercel.com/dashboard
+2. Select your project
+3. Click "Settings"
+4. Click "Environment Variables"
+5. For each variable below, click "Add" and fill in:
+
+Variable: NEXTAUTH_SECRET
+Value: [Your generated secret from Step 1]
+Environment: Select all (Production, Preview, Development)
+Click "Save"
+
+Variable: NEXTAUTH_URL
+Value: [Your Vercel domain from Step 2]
+Environment: Select all (Production, Preview, Development)
+Click "Save"
+
+Variable: GOOGLE_CLIENT_ID
+Value: [Your Google Client ID from Step 3]
+Environment: Select all (Production, Preview, Development)
+Click "Save"
+
+Variable: GOOGLE_CLIENT_SECRET
+Value: [Your Google Client Secret from Step 3]
+Environment: Select all (Production, Preview, Development)
+Click "Save"
+
+STEP 5: Redeploy
+────────────────
+1. Go to Vercel Dashboard > Deployments
+2. Click the latest deployment
+3. Click the three dots (...) > "Redeploy"
+4. Wait for deployment to complete
+
+STEP 6: Test
+────────────
+1. Visit your Vercel domain
+2. Click "Sign In"
+3. Sign in with Google
+4. See your profile picture in the header
+5. Try "Start Gauntlet" to access /session
+6. Test "Sign Out" button
+
+Done! 🎉
+
+================================================================================
+                        ENVIRONMENT VARIABLES FORMAT
+================================================================================
+
+Here's exactly what to paste into Vercel (one per "Add" button):
+
+Name: NEXTAUTH_SECRET
+Value: [your-secret-from-openssl-rand]
+
+Name: NEXTAUTH_URL
+Value: https://your-vercel-domain.vercel.app
+
+Name: GOOGLE_CLIENT_ID
+Value: [your-client-id-from-google]
+
+Name: GOOGLE_CLIENT_SECRET
+Value: [your-client-secret-from-google]
+
+================================================================================
+                       EXAMPLE VALUES (DO NOT USE)
+================================================================================
+
+These are FAKE examples. Replace with your actual values:
+
+NEXTAUTH_SECRET=aB1cD2eF3gH4iJ5kL6mN7oP8qR9sT0uV1wX2yZ3aB4cD5eF6gH7iJ8kL9mN0=
+NEXTAUTH_URL=https://treebro-abc123def456gh.vercel.app
+GOOGLE_CLIENT_ID=123456789012-abcdefghijklmnopqrstuvwxyzabcdef.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=GOCSPX-1234567890abcdefghijklmnopq
+
+================================================================================
