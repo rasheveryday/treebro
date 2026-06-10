@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { ChevronRight, Zap, Brain, Target } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 type InterviewTrack = 'intern' | 'fulltime' | 'blitz' | null;
 
@@ -15,190 +14,194 @@ export default function Home() {
     {
       id: 'intern',
       title: 'Quant Trading Intern',
-      subtitle: 'Foundation Level',
-      description: 'Master probability fundamentals and basic spread calibration.',
-      specs: ['15-second timers', '4-point spreads', 'Light Bayesian shocks'],
-      intensity: 'Moderate',
-      icon: Target,
+      subtitle: 'Foundation',
+      description: 'Master probability fundamentals and basic spread calibration under controlled pressure.',
+      specs: ['15s countdown', '4-6pt spreads', 'Light shocks'],
     },
     {
       id: 'fulltime',
-      title: 'Full-Time Trader Gauntlet',
-      subtitle: 'Advanced',
-      description: 'Heavy Bayesian updates and aggressive multi-round shocks.',
-      specs: ['15-second timers', '2-6 point spreads', 'Mid-round condition shifts'],
-      intensity: 'Aggressive',
-      icon: Brain,
+      title: 'Full-Time Trader',
+      subtitle: 'Professional',
+      description: 'Advanced Bayesian reasoning with aggressive multi-round condition shifts and live feedback.',
+      specs: ['15s countdown', '2-6pt spreads', 'Adaptive shocks'],
     },
     {
       id: 'blitz',
-      title: "Alex's 12-Day Blitz",
-      subtitle: 'Elite Preparation',
-      description: 'Maximum panic. Brutal AI feedback. Real interview simulation.',
-      specs: ['10-second timers', 'Constant shocks', 'Ruthless AI critique'],
-      intensity: 'Extreme',
-      icon: Zap,
+      title: 'Alex\'s 12-Day Blitz',
+      subtitle: 'Elite',
+      description: 'Maximum pressure simulation. Constant shocks. Ruthless AI feedback. Real interview prep.',
+      specs: ['10s countdown', 'Micro-spreads', 'Relentless shocks'],
     },
   ];
 
   const quants = ['Jane Street', 'Citadel', 'Optiver', 'SIG', 'Jump Trading'];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-zinc-950 via-slate-900 to-zinc-950 text-white overflow-hidden">
-      {/* Animated Background Gradient */}
-      <div className="fixed inset-0 opacity-30 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+    <main className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-900 via-zinc-950 to-black text-zinc-100 overflow-hidden">
+      {/* Subtle accent gradients */}
+      <div className="fixed inset-0 pointer-events-none opacity-20">
+        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-emerald-500 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500 rounded-full blur-[140px]" />
       </div>
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Logo & Tagline */}
-          <div className="text-center space-y-6 mb-16">
-            <div className="inline-block">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Zap className="w-8 h-8 text-green-400" />
-                <h1 className="text-6xl font-black bg-gradient-to-r from-green-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Treebro
-                </h1>
-              </div>
-              <p className="text-sm font-semibold text-green-400 tracking-widest uppercase">
-                Elite Quant Interview Simulator
-              </p>
-            </div>
-
-            <p className="text-2xl text-slate-200 font-light max-w-2xl mx-auto leading-relaxed">
-              Break your freeze before the real loop breaks your offer. The brutal simulator that top quant traders use to prepare for Tier-1 funds.
+      <section className="relative pt-32 pb-24 px-6">
+        <div className="max-w-5xl mx-auto text-center space-y-8">
+          {/* Logo */}
+          <div className="space-y-3">
+            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-zinc-50 to-zinc-400 font-sans">
+              Treebro
+            </h1>
+            <p className="font-mono text-xs uppercase tracking-widest text-emerald-400/80">
+              Quant Interview Simulator
             </p>
-
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <div className="px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 text-sm text-slate-300">
-                ✓ Real-time pressure simulation
-              </div>
-              <div className="px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 text-sm text-slate-300">
-                ✓ AI-powered feedback
-              </div>
-              <div className="px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 text-sm text-slate-300">
-                ✓ Bayesian update testing
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Enterprise Carousel */}
-      <section className="relative py-12 px-6 border-y border-slate-800">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-center text-sm text-slate-400 mb-8 tracking-widest uppercase">
-            Trusted by candidates interviewing at:
+          {/* Tagline */}
+          <p className="text-lg md:text-xl font-medium tracking-wide text-zinc-200 max-w-2xl mx-auto leading-relaxed">
+            Break your freeze before it breaks your $200k+ offer. The brutal AI simulator that top quantitative traders use to master live interview pressure.
           </p>
-          <div className="flex justify-center items-center gap-12 flex-wrap">
-            {quants.map((firm) => (
-              <div key={firm} className="text-center">
-                <p className="text-sm font-semibold text-slate-300 hover:text-green-400 transition">
-                  {firm}
-                </p>
+
+          {/* Value Props */}
+          <div className="flex flex-wrap justify-center gap-4 pt-4">
+            {['Real-time pressure', 'Bayesian updates', 'AI feedback'].map((prop) => (
+              <div
+                key={prop}
+                className="px-3 py-1 rounded-full bg-zinc-900/50 backdrop-blur-sm border border-zinc-800/80 font-mono text-xs uppercase tracking-widest text-emerald-400/60 hover:text-emerald-400/100 transition-colors"
+              >
+                ✓ {prop}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Interview Tracks */}
-      <section className="relative py-20 px-6">
+      {/* Quant Firms Marquee */}
+      <section className="relative py-12 px-6 border-y border-zinc-800/40">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Choose Your Gauntlet</h2>
-            <p className="text-slate-400 text-lg">Select the interview level that matches your target role and experience.</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-zinc-500/60 text-center mb-8">
+            Trusted by candidates at
+          </p>
+          <div className="flex justify-center items-center gap-16 flex-wrap">
+            {quants.map((firm) => (
+              <p
+                key={firm}
+                className="font-mono tracking-wider text-sm font-semibold opacity-70 hover:opacity-100 transition-opacity duration-300 text-zinc-500"
+              >
+                {firm}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Interview Tracks Selection */}
+      <section className="relative py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16 space-y-3">
+            <h2 className="text-5xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-zinc-50 to-zinc-400">
+              Choose Your Challenge
+            </h2>
+            <p className="font-medium tracking-wide text-zinc-300">
+              Select the interview level that matches your target role.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {tracks.map((track) => {
-              const Icon = track.icon;
-              return (
-                <button
-                  key={track.id}
-                  onClick={() => {
-                    setSelectedTrack(track.id as InterviewTrack);
-                    setShowModal(true);
-                  }}
-                  className={`group relative p-8 rounded-2xl border-2 transition-all duration-300 text-left ${
-                    selectedTrack === track.id
-                      ? 'border-green-400 bg-gradient-to-br from-green-900/30 to-slate-900/30 shadow-lg shadow-green-500/20'
-                      : 'border-slate-700 bg-slate-900/50 hover:border-slate-600 hover:bg-slate-900/70'
-                  }`}
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <p className="text-xs text-slate-400 uppercase tracking-widest mb-2">{track.subtitle}</p>
-                      <h3 className="text-xl font-bold">{track.title}</h3>
-                    </div>
-                    <Icon className={`w-5 h-5 transition-colors ${selectedTrack === track.id ? 'text-green-400' : 'text-slate-500 group-hover:text-slate-400'}`} />
+          {/* Tracks Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {tracks.map((track) => (
+              <button
+                key={track.id}
+                onClick={() => {
+                  setSelectedTrack(track.id as InterviewTrack);
+                  setShowModal(true);
+                }}
+                className={`group relative text-left p-8 rounded-xl border transition-all duration-300 ${
+                  selectedTrack === track.id
+                    ? 'bg-zinc-900/60 backdrop-blur-md border-emerald-500/80 shadow-[0_0_20px_rgba(16,185,129,0.1)]'
+                    : 'bg-zinc-900/50 backdrop-blur-md border-zinc-800/80 hover:border-zinc-700 hover:shadow-[0_0_20px_rgba(16,185,129,0.05)]'
+                }`}
+              >
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-emerald-500/10 to-transparent" />
+
+                <div className="relative space-y-4">
+                  {/* Label */}
+                  <div className="flex items-center justify-between">
+                    <p className="font-mono text-xs uppercase tracking-widest text-emerald-400/60 font-semibold">
+                      {track.subtitle}
+                    </p>
+                    <ChevronRight className={`w-4 h-4 transition-colors ${selectedTrack === track.id ? 'text-emerald-400' : 'text-zinc-600 group-hover:text-zinc-500'}`} />
                   </div>
 
-                  <p className="text-sm text-slate-300 mb-6">{track.description}</p>
+                  {/* Title */}
+                  <h3 className="text-xl font-extrabold tracking-tight text-zinc-50">{track.title}</h3>
 
-                  <div className="space-y-2 mb-6">
+                  {/* Description */}
+                  <p className="text-sm font-medium tracking-wide text-zinc-300 leading-relaxed">{track.description}</p>
+
+                  {/* Specs */}
+                  <div className="space-y-2 pt-2">
                     {track.specs.map((spec, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-slate-400">
-                        <div className="w-1 h-1 bg-green-400 rounded-full" />
+                      <div key={idx} className="flex items-center gap-2 text-xs font-mono text-zinc-400">
+                        <div className="w-1 h-1 bg-emerald-400/60 rounded-full" />
                         {spec}
                       </div>
                     ))}
                   </div>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-700">
-                    <span className={`text-xs font-semibold uppercase tracking-wider ${
-                      track.intensity === 'Extreme' ? 'text-red-400' : track.intensity === 'Aggressive' ? 'text-orange-400' : 'text-blue-400'
-                    }`}>
-                      {track.intensity}
-                    </span>
-                    <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-slate-300 transition" />
-                  </div>
-                </button>
-              );
-            })}
+                </div>
+              </button>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Bootcamp Roadmap */}
-      <section className="relative py-20 px-6 border-y border-slate-800">
+      <section className="relative py-24 px-6 border-y border-zinc-800/40">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Your Bootcamp Journey</h2>
-            <p className="text-slate-400 text-lg">Master the psychology of live betting in three phases.</p>
+          {/* Header */}
+          <div className="text-center mb-16 space-y-3">
+            <h2 className="text-5xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-zinc-50 to-zinc-400">
+              Your Training Arc
+            </h2>
+            <p className="font-medium tracking-wide text-zinc-300">
+              Master the psychology of live betting in three phases.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Timeline Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                phase: 'Phase 1',
+                phase: '01',
                 title: 'Fluid Mechanics',
-                description: 'Learn probability fundamentals. Master bid/ask calibration. Build confidence under basic time pressure.',
-                color: 'blue',
+                description: 'Learn probability fundamentals. Master bid/ask calibration. Build confidence under time pressure.',
               },
               {
-                phase: 'Phase 2',
+                phase: '02',
                 title: 'Information Shocks',
-                description: 'Handle mid-round condition changes. Test Bayesian reasoning. Learn to recalibrate, not freeze.',
-                color: 'purple',
+                description: 'Handle mid-round condition changes. Test Bayesian reasoning. Learn to recalibrate, not panic.',
               },
               {
-                phase: 'Phase 3',
+                phase: '03',
                 title: 'Brutal AI Breakdown',
-                description: 'Face the harshest feedback. Analyze your patterns. Lock in your edge before the real loop.',
-                color: 'red',
+                description: 'Face ruthless feedback. Analyze your patterns. Lock in your edge before the real loop.',
               },
             ].map((item, idx) => (
-              <div key={idx} className="relative">
-                <div className={`h-1 bg-gradient-to-r from-${item.color}-500/20 to-transparent absolute -top-8 left-0 right-0`} />
-                <div className="p-6 rounded-xl bg-slate-900/50 border border-slate-800">
-                  <p className={`text-xs font-bold uppercase tracking-widest text-${item.color}-400 mb-2`}>{item.phase}</p>
-                  <h3 className="text-lg font-bold mb-3">{item.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
+              <div
+                key={idx}
+                className="relative p-8 rounded-xl bg-zinc-900/50 backdrop-blur-md border border-zinc-800/80 hover:border-zinc-700/80 transition-all duration-300 space-y-4 group"
+              >
+                <div className="flex items-baseline gap-3">
+                  <span className="font-mono text-2xl font-extrabold text-emerald-400/60 group-hover:text-emerald-400/100 transition-colors">
+                    {item.phase}
+                  </span>
+                  <div className="h-px flex-1 bg-gradient-to-r from-emerald-500/20 to-transparent" />
                 </div>
+
+                <h3 className="text-xl font-extrabold tracking-tight text-zinc-50">{item.title}</h3>
+                <p className="text-sm font-medium tracking-wide text-zinc-300 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -206,65 +209,75 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border border-slate-700 rounded-2xl p-12 space-y-6">
-            <h2 className="text-3xl font-bold">Ready to Break Your Freeze?</h2>
-            <p className="text-slate-300 text-lg">
-              Your real interview is coming. Every minute of deliberate practice now determines whether you stay calm under pressure or panic and blow a $200k+ offer.
+      <section className="relative py-24 px-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="rounded-xl p-12 bg-zinc-900/50 backdrop-blur-md border border-zinc-800/80 space-y-6 text-center">
+            <h2 className="text-3xl font-extrabold tracking-tight text-zinc-50">Ready to break your freeze?</h2>
+            <p className="font-medium tracking-wide text-zinc-300 text-lg">
+              Your real interview is coming. Every session now determines whether you stay calm or panic and blow the offer.
             </p>
 
             {!showModal ? (
               <button
                 onClick={() => setShowModal(true)}
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 font-bold text-white transition-all shadow-lg shadow-green-500/30 hover:shadow-green-500/50"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 font-semibold text-white tracking-wide transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50"
               >
-                Start Training Now
+                Start Gauntlet
                 <ChevronRight className="w-4 h-4" />
               </button>
             ) : (
               <Link href={`/session?track=${selectedTrack || 'fulltime'}`}>
-                <Button className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 font-bold text-white transition-all shadow-lg shadow-green-500/30 hover:shadow-green-500/50">
-                  Enter Gauntlet
+                <button className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 font-semibold text-white tracking-wide transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50">
+                  Enter Challenge
                   <ChevronRight className="w-4 h-4" />
-                </Button>
+                </button>
               </Link>
             )}
 
-            <p className="text-xs text-slate-400 pt-4">
-              No signup required. Start immediately. Your progress resets each session (MVP). Premium progress tracking coming soon.
+            <p className="font-mono text-xs uppercase tracking-widest text-zinc-500/60 pt-4">
+              No signup required. Start immediately.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Modal Overlay */}
+      {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-6">
-          <div className="bg-slate-900 border border-slate-700 rounded-2xl p-8 max-w-md w-full space-y-6">
-            <div>
-              <h3 className="text-2xl font-bold mb-2">Confirm Your Choice</h3>
-              <p className="text-slate-400">
-                You selected <span className="text-green-400 font-semibold">{tracks.find((t) => t.id === selectedTrack)?.title}</span>
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-6">
+          <div className="relative w-full max-w-md rounded-xl bg-zinc-900/80 backdrop-blur-md border border-zinc-800/80 p-8 space-y-6">
+            {/* Close button */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-zinc-500 hover:text-zinc-300 transition-colors"
+            >
+              ✕
+            </button>
+
+            {/* Content */}
+            <div className="space-y-2">
+              <h3 className="text-2xl font-extrabold tracking-tight text-zinc-50">Confirm selection</h3>
+              <p className="font-medium tracking-wide text-zinc-400">
+                {tracks.find((t) => t.id === selectedTrack)?.title}
               </p>
             </div>
 
-            <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
-              <p className="text-sm text-slate-300">
+            <div className="p-4 rounded-lg bg-zinc-800/50 border border-zinc-700/50">
+              <p className="text-sm font-medium tracking-wide text-zinc-300">
                 {tracks.find((t) => t.id === selectedTrack)?.description}
               </p>
             </div>
 
-            <div className="flex gap-4">
+            {/* Actions */}
+            <div className="flex gap-3 pt-4">
               <button
                 onClick={() => setShowModal(false)}
-                className="flex-1 px-6 py-3 rounded-lg border border-slate-700 text-slate-300 hover:bg-slate-800 transition font-semibold"
+                className="flex-1 px-6 py-3 rounded-lg border border-zinc-700 text-zinc-300 hover:bg-zinc-800 font-semibold tracking-wide transition-colors"
               >
                 Change
               </button>
               <Link href={`/session?track=${selectedTrack || 'fulltime'}`} className="flex-1">
-                <button className="w-full px-6 py-3 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold transition">
-                  Start Gauntlet
+                <button className="w-full px-6 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold tracking-wide transition-colors">
+                  Start
                 </button>
               </Link>
             </div>
